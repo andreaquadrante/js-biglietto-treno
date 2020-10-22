@@ -1,19 +1,10 @@
-var userKm = parseInt(prompt('Quanti chilometri vuoi percorrere?'));
-var userAge = parseInt(prompt('Quanti anni hai?'));
+// COSTANTI
+var PRICE_PER_KM = 0.21;
+var UNDER_18_DISCOUNT = 0.2;
+var OVER_65_DISCOUNT = 0.4;
 
-var ticketPricePerKm = 0.21;
-var ticketPrice = userKm * ticketPricePerKm;
-var under18Discount = 0.2;
-var over65Discount = 0.4;
-
-if (!isNaN(userKm) || !isNaN(userAge)) {
-  if (userAge < 18) {
-    ticketPrice = ticketPrice - (ticketPrice * under18Discount);
-  } else if (userAge >= 65) {
-    ticketPrice = ticketPrice - (ticketPrice * over65Discount);
-  }
-} else {
-    alert('Attenzione! Inserisci soltanto valori numerici.');
-}
-
-document.getElementById('ticket').innerHTML = 'Il tuo biglietto ha un prezzo di ' + ticketPrice.toFixed(2) + '€';
+var ticketNameEl = document.getElementById('ticketName')
+var ticketOfferEl = document.getElementById('ticketOffer')
+var ticketWagonEl = document.getElementById('ticketWagon')
+var ticketCodeEl = document.getElementById('ticketCode')
+var ticketPriceEl = document.getElementById('ticketPrice')
