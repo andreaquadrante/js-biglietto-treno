@@ -25,7 +25,7 @@ generateButtonEl.addEventListener('click', function() {
   var userKm = userKmEl.value;
   var userAge = userAgeEl.value;
 
-  var ticketPrice = parseInt(userKm.value) * PRICE_PER_KM;
+  var ticketPrice = parseInt(userKm) * PRICE_PER_KM;
   var ticketOfferDescription = 'Biglietto Standard';
 
   if (userAge == 'under18') {
@@ -44,5 +44,23 @@ generateButtonEl.addEventListener('click', function() {
   ticketWagonEl.innerHTML = ticketWagon;
   ticketCodeEl.innerHTML = ticketCode;
   ticketPriceEl.innerHTML = ticketPrice + '€';
+
+  var ticketEl = document.getElementById('ticket');
+  ticketEl.style.display = 'flex';
+
+})
+
+var clearButtonEl = document.getElementById('clearButton')
+clearButtonEl.addEventListener('click', function(){
+
+  userNameEl.value = "";
+	userKmEl.value = "";
+	userAgeEl.value = "";
+
+  ticketNameEl.innerHTML = '';
+  ticketOfferEl.innerHTML = '';
+  ticketWagonEl.innerHTML = '';
+  ticketCodeEl.innerHTML = '';
+  ticketPriceEl.innerHTML = '';
 
 })
